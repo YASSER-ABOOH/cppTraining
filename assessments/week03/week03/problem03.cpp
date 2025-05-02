@@ -41,7 +41,6 @@ void issmall(int a[], int n)
     {
         cout << a1[i] << " ";
     }
-    cout << endl;
 }
 /*
 void isSmaller()
