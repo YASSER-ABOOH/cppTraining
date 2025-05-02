@@ -27,12 +27,14 @@ for (int i = 0; i < n; i++)
     }*/
 void issmall(int a[], int n) 
 {
-    int a1[100],i,j,count=0;
+    int a1[100], i, j;
 
     for (i = 0; i < n; i++)//check the two vaues and increment the count adn the count stores in the respective
     {
+        int count = 0;
         for (j = i + 1; j < n; j++)//so it starts from the next element or else same
         {
+         
             if (a[j] < a[i]) count++;
         }
         a1[i] = count;//for count
