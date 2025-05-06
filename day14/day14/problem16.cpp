@@ -29,3 +29,4 @@ int main()
 	else
 		cout << "Not Armstrong";
 }
+
