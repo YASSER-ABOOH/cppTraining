@@ -2,7 +2,7 @@
 #include<iostream>
 
 using namespace std;
-
+//my method where you take remainders and continuously iterate the vales
 int gcd(int , int );
 int main()
 {
@@ -22,6 +22,27 @@ int gcd(int a, int b)
 	return a;
 }
 
+
+
+
+
+//explaines by sir....
+/*for(int i=0;i>=2;i++)
+{
+if((x%i==0)&&(y%i==0))
+{
+int gcd=i;
+}
+break;
+}
+*/
+
+
+
+
+
+
+//separate failed method
 //int gcd(int, int);
 /*/int main()
 {

@@ -3,8 +3,8 @@
 #include<cmath>
 using namespace std;
 
-int main()
 {
+int main()
 	int num;
 	cin >> num;
 	int initial = num;
