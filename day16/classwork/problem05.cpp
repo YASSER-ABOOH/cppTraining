@@ -1,4 +1,4 @@
-//diamond star pattern
+//star pattern
 
 #include<iostream>
 
