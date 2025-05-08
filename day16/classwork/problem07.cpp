@@ -1,4 +1,4 @@
-//flipped diamond star pattern
+//sand dial diamond star pattern
 
 #include<iostream>
 
