@@ -18,32 +18,5 @@
     <ClCompile Include="problem01.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="problem02.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="problem03.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="problem04.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="problem05.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="problem06.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="problem07.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="problem08.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="problem09.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="problem10.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
 </Project>
