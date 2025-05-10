@@ -5,11 +5,14 @@ using namespace std;
 
 int main()
 {
-	int n,x=0;
-	cin >> n;
-	for (int i = 0;i <= n;i++)
+	int f;
+	cin >> f;
+	int n=0,m=1,p;
+	for (int i = 3;i <= f;i++)
 	{
-		x = (i - 1) + (i - 2);
+		p = n + m;
+		n = m;
+		m = p;
 	}
-	cout << x;
+	cout << p;
 }
