@@ -1,4 +1,4 @@
-//pointer holds addresses.
+//pointer holds addresses...it can nver hold a value***
 // pointer will point a particular datatype.
 //pointer size depends on system bitness...like 32 bit (4 byte)...and 8 bytes if 64 bit.
 // in 64kb computer memory there are 0-65535 address--2 bytes.
@@ -13,20 +13,29 @@ int main()
 	int a = 10;
 	char ch = 'A';
 	float f = 10.5;
-
 	//void* ptr;
 	int* ptr1 = nullptr;
+	int b = 30;
 
 	printf("\nAddress of a = %u and it's value = %d\n", &a, a);
 	printf("\nAddress of ch = %u and it's value = %c\n", &ch, ch);
 	printf("\nAddress of f = %u and it's value = %f\n", &f, f);
 	printf("\nAddress of ptr1 = %u and it's value = %u\n", &ptr1, ptr1);
+	printf("\nAddress of b = %u and it's value = %d\n", &b, b);
 
 	a = 10;
 	ptr1 = &a;
 
 	printf("\nAddress of ptr1 = %u and it's value = %u\n", &ptr1, ptr1);
 	printf("\nPtr 1 is pointing to = %u", ptr1);
+
+	ptr1 = &b;
+	printf("\nPtr 1 is pointing to = %u", ptr1);
+
+	//b = 101;
+	*ptr1 = 101;
+	printf("\nAddress of ptr1 = %u and it's value = %u\n", &b, b);
+
 	
 	//CO(ptr1) => &a
 	//CO(CO(ptr1)) => value of a = dereferencing the pointer
