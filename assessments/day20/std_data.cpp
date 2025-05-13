@@ -37,4 +37,7 @@ void std_data(int std_id, char std_name[50], int std_ph_1, int std_ph_2, char st
 
 	cout << "Enter Category";
 	cin.getline(category, 10);
+
+	cout << std_id << "\t" << std_name << "\t" << std_ph_1 << "\t" << std_ph_2 << "\t" << std_add << "\t" << std_dept << "\t" << std_mail << "\t" << tenth_percent << "\t" << twelfth_percent << "\t" << quota << "\t" << category;
+
 }
