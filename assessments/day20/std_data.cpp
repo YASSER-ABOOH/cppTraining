@@ -3,44 +3,38 @@
 
 using namespace std;
 
-void std_data(int std_id, char std_name[50], int, int, char, string, char, int, int, string, string);
+void std_data(int std_id, char std_name[50], int std_ph_1, int std_ph_2, char std_add[300], char std_dept[10], char std_mail[50], int tenth_percent, int twelfth_percent, char quota[10], char category[10])
 {
-	int std_id;
 	cout << "Enter Student ID";
 	cin >> std_id;
 
-	char std_name[50];
 	cout << "Enter Student Name";
 	cin.getline(std_name, 50);
 
-	int std_ph_1;
 	cout << "Enter Student's Primary Phone Number";
 	cin >> std_ph_1;
 
-	int std_ph_2;
 	cout << "Enter Student's Secondary Phone Number";
 	cin >> std_ph_2;
 
-	char std_add[300];
 	cout << "Enter Student Address";
 	cin.getline(std_add, 300);
 
-	string std_dept;
 	cout << "Enter Student Department";
-	cin >> std_dept;
+	cin.getline(std_dept,10);
 
-	char std_mail[50];
+	cout << "Enter Student Mail ID";
 	cin.getline(std_mail, 50);
 
-	int tenth_percent;
+	cout << "Enter 10th percentage";
 	cin >> tenth_percent;
 
-	int twelth_percent;
-	cin >> twelth_percent;
+	cout << "Enter 12th percentage";
+	cin >> twelfth_percent;
 
-	string quota;
-	cin >> quota;
+	cout << "Enter Quota";
+	cin.getline(quota, 10);
 
-	string category;
-	cin >> category;
+	cout << "Enter Category";
+	cin.getline(category, 10);
 }
