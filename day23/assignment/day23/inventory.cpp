@@ -120,3 +120,96 @@ void display(DET& d, SPEC& s, PRC& p)
 	cout << "Cost of old car : " << p.old_car_cost << endl;
 	return;
 }
+
+
+
+/*
+#include<iostream>
+
+using namespace std;
+
+const int MAX_CARS = 5; // Define inventory limit
+
+DET carsDetails[MAX_CARS];
+SPEC carsSpecs[MAX_CARS];
+PRC carsPrices[MAX_CARS];
+
+int carCount = 0; // Track the number of added cars
+
+void display(DET&, SPEC&, PRC&);
+void getCarDetails(DET&, SPEC&, PRC&);
+int carAdd(DET&, PRC&);
+int carRe(DET&, PRC&);
+int carTotalCost(PRC&);
+void displayInventory();
+void updateStock();
+
+int main()
+{
+	int choice;
+	do {
+		cout << "\nCar Inventory System\n";
+		cout << "1. Add a Car\n2. Display Inventory\n3. Update Stock\n4. Exit\n";
+		cout << "Enter your choice: ";
+		cin >> choice;
+
+		switch (choice) {
+			case 1:
+				if (carCount < MAX_CARS)
+				{
+					getCarDetails(carsDetails[carCount], carsSpecs[carCount], carsPrices[carCount]);
+					carAdd(carsDetails[carCount], carsPrices[carCount]);
+					carRe(carsDetails[carCount], carsPrices[carCount]);
+					carTotalCost(carsPrices[carCount]);
+					carCount++;
+				}
+				else
+					cout << "Inventory full! Cannot add more cars.\n";
+				break;
+			case 2: displayInventory(); break;
+			case 3: updateStock(); break;
+			case 4: cout << "Exiting...\n"; break;
+			default: cout << "Invalid choice! Try again.\n";
+		}
+	} while (choice != 4);
+
+	return 0;
+}
+
+void displayInventory()
+{
+	if (carCount == 0) {
+		cout << "No cars in inventory!\n";
+		return;
+	}
+
+	cout << "\nCar Inventory:\n";
+	for (int i = 0; i < carCount; i++)
+	{
+		display(carsDetails[i], carsSpecs[i], carsPrices[i]);
+	}
+}
+
+void updateStock()
+{
+	int model, found = 0;
+	cout << "Enter car model number to update stock: ";
+	cin >> model;
+
+	for (int i = 0; i < carCount; i++)
+	{
+		if (carsDetails[i].car_model_number == model)
+		{
+			cout << "Enter new stock quantity for model " << model << ": ";
+			cin >> carsSpecs[i].car_quantity;
+			cout << "Stock updated successfully!\n";
+			found = 1;
+			break;
+		}
+	}
+
+	if (!found)
+		cout << "Car model not found!\n";
+}
+
+*/
