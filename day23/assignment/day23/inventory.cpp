@@ -30,7 +30,7 @@ void display(DET&, SPEC&, PRC&);
 void getCarDetails(DET&, SPEC&, PRC&);
 int carAdd(DET& , PRC&);
 int carRe(DET&, PRC&);
-int carTotalCost(DET&, PRC&);
+int carTotalCost(PRC&);
 
 int main()
 {
@@ -41,7 +41,7 @@ int main()
 	getCarDetails(d, s, p);
 	carAdd(d, p);
 	carRe(d, p);
-	carTotalCost(d, p);
+	carTotalCost(p);
 	display(d, s, p);
 }
 
@@ -51,15 +51,14 @@ void getCarDetails(DET& d, SPEC& s, PRC& p)
 	cin >> d.car_model_number;
 	cout << "Enter car brand" << endl;
 	cin >> d.car_brand;
-	cin.ignore();
 	cout << "Enter car category" << endl;
 	cin >> s.car_category;
 	cout << "Car Stock left" << endl;
 	cin >> s.car_quantity;
 	cout << "Off road cost of car" << endl;
 	cin >> p.off_cost;
-	cout << "Count of Add-ons" << endl;
-	cin >> p.addon_part;
+	d.car_model_number = s.car_model_number;
+	s.car_model_number = p.car_model_number;
 	return;
 }
 
@@ -99,7 +98,7 @@ int carRe(DET&d,PRC&p)
 	return p.old_car_cost;
 }
 
-int carTotalCost(DET& d, SPEC& s, PRC& p)
+int carTotalCost(PRC& p)
 {
 	p.on_cost = p.off_cost + p.addon_cost-p.old_car_cost;
 	return p.on_cost;
