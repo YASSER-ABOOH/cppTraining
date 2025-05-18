@@ -2,6 +2,8 @@
 
 using namespace std;
 
+const int MAX_CAR = 10;
+
 typedef struct carDetails
 {
 	int car_model_number;
@@ -34,9 +36,11 @@ int carTotalCost(PRC&);
 
 int main()
 {
-	DET d;
-	SPEC s;
-	PRC p;
+	DET d[MAX_CAR];
+	SPEC s[MAX_CAR];
+	PRC p[MAX_CAR];
+	int choice;
+	int count = 0;
 
 	getCarDetails(d, s, p);
 	carAdd(d, p);
