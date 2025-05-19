@@ -193,15 +193,15 @@ void display(DET& d, SPEC& s, PRC& p)
     cout << " = ============================================ = " << endl;
     cout << "THE LIVING MACHINES" << endl;
     cout << "= ============================================ =" << endl;
-    cout << "Car Model : " << d.car_model_number << endl;
-    cout << "Car Brand : " << d.car_brand << endl;
-    cout << "Car category : " << s.car_category << endl;
-    cout << "Car Left in Showroom : " << s.car_quantity << endl;
-    cout << "On Road Cost : " << p.on_cost << endl;
-    cout << "Off road Cost : " << p.off_cost << endl;
-    cout << "Number of Add-on Parts : " << p.addon_part << endl;
-    cout << "Add-on Cost : " << p.addon_cost << endl;
-    cout << "Cost of old car : " << p.old_car_cost << endl;
+    cout << "Car Model" << "\t : \t" << d.car_model_number << endl;
+    cout << "Car Brand" << "\t : \t" << d.car_brand << endl;
+    cout << "Car category" << "\t : \t" << s.car_category << endl;
+    cout << "Cars Left" << "\t : \t" << s.car_quantity << endl;
+    cout << "On Road Cost" << "\t : \t" << p.on_cost << endl;
+    cout << "Off road Cost" << "\t : \t" << p.off_cost << endl;
+    cout << "Add-on Parts" << "\t : \t" << p.addon_part << endl;
+    cout << "Add-on Cost" << "\t : \t" << p.addon_cost << endl;
+    cout << "Cost of old car" << "\t : \t" << p.old_car_cost << endl;
     cout << "= ============================================= =" << endl;
     return;
 }
