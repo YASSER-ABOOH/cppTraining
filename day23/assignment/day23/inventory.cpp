@@ -45,8 +45,13 @@ int main()
     int count = 0;
 
     do {
-        cout << "\nCar Inventory System\n";
-        cout << "1. Add a Car\n2. Display Inventory\n3. Update Stock\n4. Exit\n";
+        cout << "= ============================== =" << endl;
+        cout << "Car Inventory System" << endl;
+        cout << "= ============================== =" << endl;
+        cout << "1. Add a Car" << endl;
+        cout << "2. Display Inventory" << endl;
+        cout << "3.Update Stock" << endl;
+        cout << "4.Exit" << endl;
         cout << "Enter your choice: ";
         cin >> choice;
 
