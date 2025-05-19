@@ -6,210 +6,197 @@ const int MAX_CAR = 10;
 
 typedef struct carDetails
 {
-	int car_model_number;
-	string car_brand;
+    int car_model_number;
+    string car_brand;
 }DET;
 
 typedef struct carSpecification
 {
-	int car_model_number;
-	int car_quantity;
-	string car_category;
+    int car_model_number;
+    int car_quantity;
+    string car_category;
 }SPEC;
 
 typedef struct carPrice
 {
-	int car_model_number;
-	int off_cost;
-	int resell_old_car;
-	int on_cost;
-	int addon_part;
-	int addon_cost;
-	int old_car_cost;
+    int car_model_number;
+    int off_cost;
+    int resell_old_car;
+    int on_cost;
+    int addon_part;
+    int addon_cost;
+    int old_car_cost;
 }PRC;
-
-void display(DET&, SPEC&, PRC&);
-void getCarDetails(DET&, SPEC&, PRC&);
-int carAdd(DET& , PRC&);
-int carRe(DET&, PRC&);
-int carTotalCost(PRC&);
-
-int main()
-{
-	DET d[MAX_CAR];
-	SPEC s[MAX_CAR];
-	PRC p[MAX_CAR];
-	int choice;
-	int count = 0;
-
-	getCarDetails(d, s, p);
-	carAdd(d, p);
-	carRe(d, p);
-	carTotalCost(p);
-	display(d, s, p);
-}
-
-void getCarDetails(DET& d, SPEC& s, PRC& p)
-{
-	cout << "Enter car model number" << endl;
-	cin >> d.car_model_number;
-	cout << "Enter car brand" << endl;
-	cin >> d.car_brand;
-	cout << "Enter car category" << endl;
-	cin >> s.car_category;
-	cout << "Car Stock left" << endl;
-	cin >> s.car_quantity;
-	cout << "Off road cost of car" << endl;
-	cin >> p.off_cost;
-	d.car_model_number = s.car_model_number;
-	s.car_model_number = p.car_model_number;
-	return;
-}
-
-int carAdd(DET& d, PRC& p)
-{
-	cout << "Enter Number of Parts to be added" << endl;
-	cin >> p.addon_part;
-	if (p.addon_part == 0)
-		p.addon_cost = 0;
-	else {
-		cout << "Enter Add-on Cost" << endl;
-		cin >> p.addon_cost;
-	}
-	return p.addon_cost;
-}
-
-
-int carRe(DET&d,PRC&p)
-{
-	cout << "Enter if your selling an old car" << endl;
-	cout << "Press '0' for NO \t '1' for Yes" << endl;
-	cin >> p.resell_old_car;
-	do
-	{
-		if (p.resell_old_car == 0)
-			p.old_car_cost = 0;
-		else if (p.resell_old_car == 1)
-		{
-			cout << "Enter the value of old car" << endl;
-			cin >> p.old_car_cost;
-		}
-		else
-		{
-			cout << "Invalid Input.Enter '0' or '1' only" << endl;
-		}
-	} while (p.resell_old_car != 0 && p.resell_old_car != 1);
-	return p.old_car_cost;
-}
-
-int carTotalCost(PRC& p)
-{
-	p.on_cost = p.off_cost + p.addon_cost - p.old_car_cost;
-	return p.on_cost;
-}
-void display(DET& d, SPEC& s, PRC& p)
-{
-	cout << "Car Model : " << d.car_model_number << endl;
-	cout << "Car Brand : " << d.car_brand << endl;
-	cout << "Car category : " << s.car_category << endl;
-	cout << "Car Left in Showroom : " << s.car_quantity << endl;
-	cout << "On Road Cost : " << p.on_cost << endl;
-	cout << "Off road Cost : " << p.off_cost << endl;
-	cout << "Number of Add-on Parts : " << p.addon_part << endl;
-	cout << "Add-on Cost : " << p.addon_cost << endl;
-	cout << "Cost of old car : " << p.old_car_cost << endl;
-	return;
-}
-
-
-
-/*
-#include<iostream>
-
-using namespace std;
-
-const int MAX_CARS = 5; // Define inventory limit
-
-DET carsDetails[MAX_CARS];
-SPEC carsSpecs[MAX_CARS];
-PRC carsPrices[MAX_CARS];
-
-int carCount = 0; // Track the number of added cars
 
 void display(DET&, SPEC&, PRC&);
 void getCarDetails(DET&, SPEC&, PRC&);
 int carAdd(DET&, PRC&);
 int carRe(DET&, PRC&);
 int carTotalCost(PRC&);
-void displayInventory();
-void updateStock();
+void displayInventory(DET[], SPEC[], PRC[], int);
+void updateStock(DET[], SPEC[], int);
 
 int main()
 {
-	int choice;
-	do {
-		cout << "\nCar Inventory System\n";
-		cout << "1. Add a Car\n2. Display Inventory\n3. Update Stock\n4. Exit\n";
-		cout << "Enter your choice: ";
-		cin >> choice;
+    DET d[MAX_CAR];
+    SPEC s[MAX_CAR];
+    PRC p[MAX_CAR];
+    int choice;
+    int count = 0;
 
-		switch (choice) {
-			case 1:
-				if (carCount < MAX_CARS)
-				{
-					getCarDetails(carsDetails[carCount], carsSpecs[carCount], carsPrices[carCount]);
-					carAdd(carsDetails[carCount], carsPrices[carCount]);
-					carRe(carsDetails[carCount], carsPrices[carCount]);
-					carTotalCost(carsPrices[carCount]);
-					carCount++;
-				}
-				else
-					cout << "Inventory full! Cannot add more cars.\n";
-				break;
-			case 2: displayInventory(); break;
-			case 3: updateStock(); break;
-			case 4: cout << "Exiting...\n"; break;
-			default: cout << "Invalid choice! Try again.\n";
-		}
-	} while (choice != 4);
+    do {
+        cout << "\nCar Inventory System\n";
+        cout << "1. Add a Car\n2. Display Inventory\n3. Update Stock\n4. Exit\n";
+        cout << "Enter your choice: ";
+        cin >> choice;
 
-	return 0;
+        switch (choice)
+        {
+        case 1: {
+            if (count < MAX_CAR)
+            {
+                getCarDetails(d[count], s[count], p[count]);
+                carAdd(d[count], p[count]);
+                carRe(d[count], p[count]);
+                carTotalCost(p[count]);
+                display(d[count], s[count], p[count]);
+                count++;
+            }
+            else
+                cout << "Stock is Full" << endl;
+            break;
+        }
+        case 2:
+        {
+            displayInventory(d, s, p, count);
+            break;
+        }
+        case 3:
+        {
+            updateStock(d, s, count);
+            break;
+        }
+        case 4:
+        {
+            cout << "Exiting...\n";
+            break;
+        }
+        default:
+        {
+            cout << "Invalid choice! Try again.\n";
+        }
+        }
+    } while (choice != 4);
 }
 
-void displayInventory()
+void displayInventory(DET d[], SPEC s[], PRC p[], int count)
 {
-	if (carCount == 0) {
-		cout << "No cars in inventory!\n";
-		return;
-	}
+    if (count == 0) {
+        cout << "No cars in inventory!\n";
+        return;
+    }
 
-	cout << "\nCar Inventory:\n";
-	for (int i = 0; i < carCount; i++)
-	{
-		display(carsDetails[i], carsSpecs[i], carsPrices[i]);
-	}
+    cout << "\nCar Inventory:\n";
+    for (int i = 0; i < count; i++)
+    {
+        display(d[i], s[i], p[i]);
+    }
 }
 
-void updateStock()
+void updateStock(DET d[], SPEC s[], int count)
 {
-	int model, found = 0;
-	cout << "Enter car model number to update stock: ";
-	cin >> model;
+    int model, found = 0;
+    cout << "Enter car model number to update stock: ";
+    cin >> model;
 
-	for (int i = 0; i < carCount; i++)
-	{
-		if (carsDetails[i].car_model_number == model)
-		{
-			cout << "Enter new stock quantity for model " << model << ": ";
-			cin >> carsSpecs[i].car_quantity;
-			cout << "Stock updated successfully!\n";
-			found = 1;
-			break;
-		}
-	}
+    for (int i = 0; i < count; i++)
+    {
+        if (d[i].car_model_number == model)
+        {
+            cout << "Enter new stock quantity for model " << model << ": ";
+            cin >> s[i].car_quantity;
+            cout << "Stock updated successfully!\n";
+            found = 1;
+            break;
+        }
+    }
 
-	if (!found)
-		cout << "Car model not found!\n";
+    if (!found)
+        cout << "Car model not found!\n";
 }
 
-*/
+void getCarDetails(DET& d, SPEC& s, PRC& p)
+{
+    cout << "Enter car model number" << endl;
+    cin >> d.car_model_number;
+    cout << "Enter car brand" << endl;
+    cin >> d.car_brand;
+    cout << "Enter car category" << endl;
+    cin >> s.car_category;
+    cout << "Car Stock left" << endl;
+    cin >> s.car_quantity;
+    cout << "Off road cost of car" << endl;
+    cin >> p.off_cost;
+    s.car_model_number = d.car_model_number;
+    p.car_model_number = d.car_model_number;
+    return;
+}
+
+int carAdd(DET& d, PRC& p)
+{
+    cout << "Enter Number of Parts to be added" << endl;
+    cin >> p.addon_part;
+    if (p.addon_part == 0)
+        p.addon_cost = 0;
+    else {
+        cout << "Enter Add-on Cost" << endl;
+        cin >> p.addon_cost;
+    }
+    return p.addon_cost;
+}
+
+int carRe(DET& d, PRC& p)
+{
+    cout << "Enter if you're selling an old car" << endl;
+    cout << "Press '0' for NO \t '1' for Yes" << endl;
+    cin >> p.resell_old_car;
+    do
+    {
+        if (p.resell_old_car == 0)
+            p.old_car_cost = 0;
+        else if (p.resell_old_car == 1)
+        {
+            cout << "Enter the value of old car" << endl;
+            cin >> p.old_car_cost;
+        }
+        else
+        {
+            cout << "Invalid Input. Enter '0' or '1' only" << endl;
+        }
+    } while (p.resell_old_car != 0 && p.resell_old_car != 1);
+    return p.old_car_cost;
+}
+
+int carTotalCost(PRC& p)
+{
+    p.on_cost = p.off_cost + p.addon_cost - p.old_car_cost;
+    return p.on_cost;
+}
+
+void display(DET& d, SPEC& s, PRC& p)
+{
+    cout <<" = ============================================ = " << endl;
+    cout << "THE LIVING MACHINES" << endl;
+    cout << "= ============================================ =" << endl;
+    cout << "Car Model : " << d.car_model_number << endl;
+    cout << "Car Brand : " << d.car_brand << endl;
+    cout << "Car category : " << s.car_category << endl;
+    cout << "Car Left in Showroom : " << s.car_quantity << endl;
+    cout << "On Road Cost : " << p.on_cost << endl;
+    cout << "Off road Cost : " << p.off_cost << endl;
+    cout << "Number of Add-on Parts : " << p.addon_part << endl;
+    cout << "Add-on Cost : " << p.addon_cost << endl;
+    cout << "Cost of old car : " << p.old_car_cost << endl;
+    cout << "= ============================================= =" << endl;
+    return;
+}
