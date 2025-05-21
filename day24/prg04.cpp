@@ -1,3 +1,7 @@
+//allocation of memory is based on the situation and needs.
+//in some cases the rows and columns aren't fixed and either of them can grow dynamically.
+//example HASHING...this slows the performance
+
 #include<iostream>
 
 using namespace std;
