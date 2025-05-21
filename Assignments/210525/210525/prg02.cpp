@@ -11,7 +11,7 @@ class Movie
 private:
 	char title[20];
 	char genre[20];
-	int rating;
+	float rating;
 public:
 	void setTitle(char[]);
 	void getTitle();
