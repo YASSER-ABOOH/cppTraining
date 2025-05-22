@@ -62,7 +62,8 @@ float Student::calculateAverage()
 
 void Student::getGrade()
 {
-	float avg=calculateAverage();
+	float avg;
+	avg=calculateAverage();
 	
 	if (avg >= 90)
 		cout << "Grade : A" << endl;
