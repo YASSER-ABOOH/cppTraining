@@ -26,9 +26,10 @@ void Array::getArray()
 {
 	cout << "Enter Array Size" << endl;
 	cin >> size;
+	cout << "Enter Array" << endl;
 	for (int i = 0;i < size;i++)
 	{
-		cout << "Enter Array" << endl;
+		
 		cin >> arr[i];
 	}
 }
@@ -87,11 +88,13 @@ int main()
 {
 	Array a;
 	a.getArray();
-	a.display();
 	a.biggestinArray();
 
 	a.ascendingArray();
+	cout << "Ascending : ";
 	a.display();
+	cout << endl;
+	cout << "Descending : ";
 	a.descendingArray();
 	a.display();
 }
