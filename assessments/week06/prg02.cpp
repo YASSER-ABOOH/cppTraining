@@ -16,4 +16,24 @@ public:
 		ps_name = p;
 		weight = w;
 	}
+	void checkOverweight();
 };
+
+void Luggage::checkOverweight()
+{
+	limit = 20;
+	if (weight < limit)
+		cout << "Luggage within limit." << endl;
+	else
+		cout <<"Overweight! Exceeded by " << weight-limit <<" kg" <<endl;
+}
+
+int main()
+{
+	Luggage l1("Rita", 18);
+	l1.checkOverweight();
+
+	Luggage l2("Sam", 25);
+	l2.checkOverweight();
+
+}
