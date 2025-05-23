@@ -4,9 +4,16 @@
 
 using namespace std;
 
-class Luggae
+class Luggage
 {
 protected:
 	string ps_name;
-
+	int weight;
+	int limit;
+public:
+	Luggage(string p, int w)
+	{
+		ps_name = p;
+		weight = w;
+	}
 };
