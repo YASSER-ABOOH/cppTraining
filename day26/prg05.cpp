@@ -37,8 +37,8 @@ void Array::display()
 	
 	//int arr[i] = getArray();
 	for (int i = 0;i < size;i++)
-		
-		cout << arr[i] << endl;
+
+		cout << arr[i];
 };
 
 int Array::biggestinArray()
@@ -89,9 +89,9 @@ int main()
 	a.getArray();
 	a.display();
 	a.biggestinArray();
-	a.display();
+
 	a.ascendingArray();
 	a.display();
 	a.descendingArray();
-
+	a.display();
 }
