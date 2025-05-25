@@ -36,7 +36,7 @@ string Employee::getName()
 }
 void Employee::display()
 {
-	cout << "EMP : " << emp_id << "NAME : " << emp_name << endl;
+	cout << "EMP : " << emp_id <<"|"<< "NAME : " << emp_name << endl;
 }
 
 class Stack
@@ -45,7 +45,7 @@ private:
 	int top;
 	Employee arr[MAX];
 public:
-	Stack s1() { top = -1; 
+	Stack () { top = -1; 
 	}
 	bool push(Employee& emp );
 	bool pop();
