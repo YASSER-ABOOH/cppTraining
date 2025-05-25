@@ -95,13 +95,13 @@ int main()
 {
 	Employee e;
 	Stack s;
-	e.setId(777);
+	e.setId(111);
 	e.setName("Gyro");
 	s.push(e);
-	e.setId(999);
+	e.setId(222);
 	e.setName("Gappy");
 	s.push(e);
-	e.setId(444);
+	e.setId(333);
 	e.setName("Guido");
 	s.push(e);
 
