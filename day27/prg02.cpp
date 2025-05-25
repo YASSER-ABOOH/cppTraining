@@ -85,8 +85,8 @@ bool Stack::pop()
 		return 0;
 	}
 	else
-		top--;
-	arr[top].display();
+		
+	arr[top--];
 	cout << "Employee Removed" << endl;
 	return 1;
 }
