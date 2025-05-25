@@ -93,16 +93,19 @@ bool Stack::pop()
 
 int main()
 {
-	int id;
-	string name;
-	cout << "Enter ID and Name" << endl;
-	cin >> id >> name;
-
 	Employee e;
 	Stack s;
-	e.setId(id);
-	e.setName(name);
+	e.setId(777);
+	e.setName("Gyro");
 	s.push(e);
+	e.setId(999);
+	e.setName("Gappy");
+	s.push(e);
+	e.setId(444);
+	e.setName("Guido");
+	s.push(e);
+
+
 	s.pop();
 	s.Sdisp();
 }
