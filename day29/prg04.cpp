@@ -13,9 +13,11 @@ typedef struct node
 NODE* createNode();
 NODE* addNodeBeg(NODE*, NODE*);
 NODE* addNodeEnd(NODE*, NODE*);
-//add between two nodes
+NODE* delNodBeg(NODE*head);
+NODE* delNodEnd(NODE* head);
+
 // search
-//delete
+NODE* deleteNode(NODE*, NODE*);
 int dispList(NODE*);
 int dispMenu();
 
@@ -35,11 +37,18 @@ int main()
 			head = addNodeEnd(head, createNode());
 			break;
 		case 3:
-			dispList(head);
+			head = delNodBeg(head);
 			break;
 		case 4:
+			head = delNodEnd(head);
+			break;
+		case 5:
+			dispList(head);
+			break;
+		case 6:
 			ch = 0;
 			break;
+
 		default:
 			cout << "Something went wrong" << endl;
 		}
@@ -70,6 +79,30 @@ int dispList(NODE* head)
 	}
 	cout << "NULL" << endl;
 	return EXIT_SUCCESS;
+}
+NODE* delNodBeg(NODE*head)
+{
+	if (head == NULL)
+		return head;
+	else {
+		NODE* temp = head;
+		head = head->next;
+		return head;
+	}
+}
+
+NODE* delNodEnd(NODE* head)
+{
+	if (head == NULL)
+		return head;
+	else
+	{
+		NODE* temp = head;
+		while (temp->next->next != NULL)
+			temp = temp->next;
+		temp->next = NULL;
+		return head;
+	}
 }
 
 NODE* addNodeEnd(NODE* head, NODE* nn)
