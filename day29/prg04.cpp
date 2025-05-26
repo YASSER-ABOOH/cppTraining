@@ -16,8 +16,8 @@ NODE* addNodeEnd(NODE*, NODE*);
 NODE* delNodBeg(NODE*head);
 NODE* delNodEnd(NODE* head);
 
-// search
 NODE* deleteNode(NODE*, NODE*);
+
 int dispList(NODE*);
 int dispMenu();
 
@@ -138,4 +138,9 @@ NODE* createNode()
 	cin >> nn->data;
 	nn->next = NULL;
 	return nn;
+}
+
+int main()
+{
+
 }
