@@ -51,6 +51,14 @@ void Packet::display()
 	cout << "Size: " << size << endl;
 }
 
+class Queue {
+
+};
+
+
+class Logger{
+
+}
 
 int main()
 {
