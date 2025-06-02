@@ -10,7 +10,7 @@
 using namespace std;
 
 enum LogginLevel
-{	INFO, DEBUG, WARNING, ERROR,};
+{	INFO, DEBUG, WARNING, ERROR};
 
 class Logger
 {
@@ -57,13 +57,11 @@ const char* Logger::logleveltostring(int level)
 	case 4:
 		return "ERROR";
 		break;
-	default:
-		break;
 	}
 }
 class Job
 {
-protected:
+private:
 	int jobId;
 	int executionTime;
 	int priority;
