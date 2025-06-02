@@ -2,7 +2,6 @@
 #include<fstream>
 #include<vector>
 #include<chrono>
-#include <ctime>
 #include<thread>
 #include<string>
 #include<algorithm>
@@ -11,12 +10,7 @@
 using namespace std;
 
 enum LogginLevel
-{
-	INFO,
-	DEBUG,
-	WARNING,
-	ERROR,
-};
+{	INFO, DEBUG, WARNING, ERROR,};
 
 class Logger
 {
@@ -39,34 +33,34 @@ public:
 		}
 	}
 
-	const char* logleveltostring(int level)
-	{
-		switch (level)
-		{
-		case 0:
-			return "INFO";
-			break;
-		case 1:
-			return "DEBUG";
-			break;
-		case 2:
-			return "WARNING";
-			break;
-		case 3:
-			return "ERROR";
-			break;
-		default:
-			break;
-		}
-	}
+	const char* logleveltostring(int level);
 
-	void log(int level, const char* str)
-	{
-		fileOut << "[" << logleveltostring(level) << "]" << str << endl;
-	}
+	void log(int level, const char* str);
 };
-
-
+void Logger::log(int level, const char* str)
+{
+	fileOut << "[" << logleveltostring(level) << "]" << str << endl;
+}
+const char* Logger::logleveltostring(int level)
+{
+	switch (level)
+	{
+	case 1:
+		return "INFO";
+		break;
+	case 2:
+		return "DEBUG";
+		break;
+	case 3:
+		return "WARNING";
+		break;
+	case 4:
+		return "ERROR";
+		break;
+	default:
+		break;
+	}
+}
 class Job
 {
 protected:
@@ -98,26 +92,26 @@ public:
 	{
 		return priority;
 	}
-	void displayJob()
-	{
-		cout << "Job ID: " << jobId << endl;
-		cout << "Execution Time: " << executionTime << endl;
-		cout << "Priority: " << priority << endl;
-	}
-	int executeJob(Logger& ob)
-	{
-		auto start = chrono::system_clock::now();
-		this_thread::sleep_for(chrono::milliseconds(executionTime));
-		auto end = chrono::system_clock::now();
-		auto duration = chrono::duration_cast<chrono::milliseconds>(end - start);
-		char msg[100];
-		sprintf(msg, "Executing Job ID: %d | Priority: %d | ExecTime %dms", jobId, priority, duration.count());
-		ob.log(1, msg);
-		return duration.count();
-	}
+	void displayJob();
+	int executeJob(Logger& ob);
 };
-
-
+void Job::displayJob()
+{
+	cout << "Job ID: " << jobId << endl;
+	cout << "Execution Time: " << executionTime << endl;
+	cout << "Priority: " << priority << endl;
+}
+int Job::executeJob(Logger& ob)
+{
+	auto start = chrono::system_clock::now();
+	this_thread::sleep_for(chrono::milliseconds(executionTime));
+	auto end = chrono::system_clock::now();
+	auto duration = chrono::duration_cast<chrono::milliseconds>(end - start);
+	char msg[100];
+	sprintf(msg, "Executing Job ID: %d | Priority: %d | ExecTime %dms", jobId, priority, duration.count());
+	ob.log(1, msg);
+	return duration.count();
+}
 struct Compare
 {
 	bool operator()(Job obj1, Job obj2)
@@ -164,12 +158,6 @@ public:
 		}
 	}
 
-
-	void sortPriority()
-	{
-		sort(arr.begin(), arr.end(), Compare());
-	}
-
 	void executeQueue(Logger& ob)
 	{
 		if (isPriority == true)
@@ -191,14 +179,18 @@ public:
 	{
 		this->isPriority = isPriority;
 	}
+	void sortPriority();
 };
 
-
+void Queue::sortPriority()
+{
+	sort(arr.begin(), arr.end(), Compare());
+}
 
 int main()
 {
 	while (1) {
-		cout << "=====Jobchain Scheduler=====";
+		cout << "CPU SCheduler";
 		int options;
 		cout << "1. Load jobs from file" << endl;
 		cout << "2. Choose scheduling algorithm " << endl;
@@ -221,7 +213,7 @@ int main()
 		case 2:
 			cin >> alg;
 			if (alg == 'b')
-			{5
+			{
 				q.setPriority(true);
 				l.log(INFO, "Selected Priority Scheduling");
 			}
