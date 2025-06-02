@@ -15,16 +15,19 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="file_handling.cpp">
+    <ClCompile Include="copyConstruct.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="file_prg01.cpp">
+    <ClCompile Include="port.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="AsiPrg01+temp.cpp">
+    <ClCompile Include="functors.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Asi_prg01.cpp">
+    <ClCompile Include="CPU_Scheduling.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NetMon.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
