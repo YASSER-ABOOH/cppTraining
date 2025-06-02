@@ -187,7 +187,7 @@ void Queue::sortPriority()
 int main()
 {
 	while (1) {
-		cout << "CPU SCheduler";
+		cout << "CPU SCheduler" << endl;;
 		int options;
 		cout << "1. Load jobs from file" << endl;
 		cout << "2. Choose scheduling algorithm " << endl;
