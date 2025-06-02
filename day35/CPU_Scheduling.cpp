@@ -110,13 +110,8 @@ int Job::executeJob(Logger& ob)
 	ob.log(1, msg);
 	return duration.count();
 }
-struct Compare
-{
-	bool operator()(Job obj1, Job obj2)
-	{
-		return obj1.getPriority() < obj2.getPriority();
-	}
-};
+
+
 
 
 class Queue
@@ -179,11 +174,15 @@ public:
 	}
 	void sortPriority();
 };
-
+bool compareJobs(Job obj1, Job obj2)
+{
+	return obj1.getPriority() < obj2.getPriority();
+}
 void Queue::sortPriority()
 {
-	sort(arr.begin(), arr.end(), Compare());
+	sort(arr.begin(), arr.end(), compareJobs);
 }
+
 
 int main()
 {
