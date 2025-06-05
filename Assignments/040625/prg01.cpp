@@ -6,46 +6,46 @@
 using namespace std;
 
 int main() {
-	std::list<std::string> T;
-	int cur_pos = 0;
-	std::string commands, line;
-	while (true) {
+	list<string> T1;
+	int cur = 0;
+	string cmd, ln;
+	while (1) {
 		cout << "Enter command: ";
-		cin >> commands;
-		if (commands == "INSERT") {
+		cin >> cmd;
+		if (cmd == "INSERT") {
 			cout << "Enter line to insert: " << endl;
-			cin >> line;
-			auto it = T.begin();
-			for (int i = 0; i < cur_pos; i++) {
+			cin >> ln;
+			auto it = T1.begin();
+			for (int i = 0; i < cur; i++) {
 				it++;
 			}
 
-			T.insert(it, line);
-			cur_pos++;
+			T1.insert(it, ln);
+			cur++;
 		}
-		else if (commands == "UP") {
-			if (cur_pos > 0) {
-				cur_pos--;
+		else if (cmd == "UP") {
+			if (cur > 0) {
+				cur--;
 			}
 			else {
 				cout << "Cursor is already in the top";
 			}
 		}
-		else if (commands == "DOWN") {
-			if (cur_pos < T.size()) {
-				cur_pos++;
+		else if (cmd == "DOWN") {
+			if (cur < T1.size()) {
+				cur++;
 			}
 			else {
 				cout << "Cursor is already in the bottom";
 			}
 		}
-		else if (commands == "PRINT") {
+		else if (cmd == "PRINT") {
 			cout << "Text Buffer: ";
-			for (auto& line : T) {
+			for (auto& line : T1) {
 				cout << line << endl;
 			}
 		}
-		else if (commands == "EXIT") {
+		else if (cmd == "EXIT") {
 			break;
 		}
 		else {
@@ -53,5 +53,4 @@ int main() {
 
 		}
 	}
-	return 0;
 }
