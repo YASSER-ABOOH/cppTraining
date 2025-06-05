@@ -1,3 +1,5 @@
+// Chat History Cleanup
+
 #include <iostream>
 #include <forward_list>
 #include <string>
