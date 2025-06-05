@@ -1,4 +1,4 @@
-/*std::vector<string> ? Batch Word Processing*/
+
 #include <iostream>
 #include <algorithm>
 #include <vector>
