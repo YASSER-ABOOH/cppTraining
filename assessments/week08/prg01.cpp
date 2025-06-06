@@ -74,9 +74,9 @@ protected:
     int* getOperand(const string& op, int& value) {
         if (op.empty()) return nullptr;
 
-        if (op.size() >= 3 && op[0] == '[' && op.back() == ']') {
+        if (op.size() >= 2 && op[0] == '[' && op.back() == ']') {
             try {
-                int i = stoi(op.substr(1, op.size() - 2));
+                int i = stoi(op.substr(0, op.size() - 1));
                 return &BX;
             }
             catch (const std::invalid_argument& e) {
