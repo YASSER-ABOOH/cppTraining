@@ -29,7 +29,7 @@ public:
 		memory = vector<int>(16, 0);
 	}
 protected:
-    void parse(const string& line1, string& instruction, string& op1, string& op2) {
+    void alter(const string& line1, string& instruction, string& op1, string& op2) {
         instruction = ""; op1 = ""; op2 = "";
 
         string line2 = line1;
@@ -183,7 +183,7 @@ public:
         string instruction,op1,op2;
         int value = 0;
 
-        parse(line1, instruction, op1, op2);
+        alter(line1, instruction, op1, op2);
         int* destination = getOperand(op1, value);
         int* source = getOperand(op2, value);
         if (instruction == "MOV")
