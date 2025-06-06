@@ -72,21 +72,18 @@ protected:
         op2 = newstr.substr(p2 + 1);
     }
     int* getOperand(const string& op, int& value) {
+        if (op.empty()) return nullptr;
+
         if (op.size() >= 3 && op[0] == '[' && op.back() == ']') {
-
-            int i = stoi(op.substr(1, op.size() - 2));
-
-            if (i >= 0 && i < memory.size())
-            {
-                //return memory;
-                return &memory.at(i);
+            try {
+                int i = stoi(op.substr(1, op.size() - 2));
+                return &BX;
             }
-            cout << "Invalid memory index" << endl;
+            catch (const std::invalid_argument& e) {
+                return &BX;
+            }
 
-
-            return nullptr;
         }
-
         else if (op == "AX")
         {
             return &AX;
@@ -98,16 +95,17 @@ protected:
         else if (op == "CX")
         {
             return &CX;
-
         }
         else if (op == "DX")
         {
             return &DX;
         }
-
         value = stoi(op);
+
+
         return nullptr;
     }
+
     void move(int* destination, int* source, int value) {
         if (destination != nullptr)
         {
