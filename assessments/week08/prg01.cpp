@@ -76,11 +76,17 @@ protected:
 
         if (op.size() >= 2 && op[0] == '[' && op.back() == ']') {
             try {
-                int i = stoi(op.substr(0, op.size() - 1));
-                return &BX;
+                int i = stoi(op.substr(1, op.size() - 2));
+                if (i >= 0 && i < MAX)
+                    return &memory[i];
+                else
+                {
+                    cout << "Invalid " << endl;
+                    return nullptr;
+                }
             }
-            catch (const std::invalid_argument& e) {
-                return &BX;
+            catch (const invalid_argument& e) {
+                return nullptr;
             }
 
         }
