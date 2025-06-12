@@ -15,19 +15,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="unordered_set.cpp">
+    <ClCompile Include="deadlock.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="unordered_multiset.cpp">
+    <ClCompile Include="CPU-LoadBalanceSimulator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="unordered_map_multimap.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="iterators.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="iteratorsFunctions.cpp">
+    <ClCompile Include="HMS.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

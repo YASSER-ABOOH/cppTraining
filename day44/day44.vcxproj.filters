@@ -15,19 +15,40 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="unordered_set.cpp">
+    <ClCompile Include="multithreading.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="unordered_multiset.cpp">
+    <ClCompile Include="thread.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="unordered_map_multimap.cpp">
+    <ClCompile Include="attach-detach.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="iterators.cpp">
+    <ClCompile Include="racecondtion.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="iteratorsFunctions.cpp">
+    <ClCompile Include="prg01.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="prg02.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="prg03.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mutex.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="prg04.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="prg05.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="prg06.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="prg07.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
