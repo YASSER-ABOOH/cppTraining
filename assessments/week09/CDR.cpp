@@ -288,21 +288,22 @@ public:
 		}
 		void dispC()
 		{
-			for(int i=0;i<cudata.size();i++)
-			std::cout << "# Customers Data Base:" << std::endl;
-			std::cout << "Customers ID: " << msisdn << " (" << opBrandName << ")" << std::endl;
-			std::cout << "* Services within the mobile operator *" << std::endl;
-			std::cout << "Incoming voice call durations: " << inccall[i] << std::endl;
-			std::cout << "Outgoing voice call durations: " << outcall[i] << std::endl;
-			std::cout << "Incoming SMS messages: " <<incsms[i]<< std::endl;
-			std::cout << "Outgoing SMS messages: " << outsms[i] << std::endl;
-			std::cout << "* Services outside the mobile operator *" << std::endl;
-			std::cout << "Incoming voice call durations: " <<inccall[i] <<std::endl;
-			std::cout << "Outgoing call durations: " << outcall[i] << std::endl;
-			std::cout << "Incoming SMS messages: " << incsms[i] << std::endl;
-			std::cout << "Outgoing SMS messages: " << outsms[i] << std::endl;
-			std::cout << "* Internet use *" << std::endl;
-			std::cout << "MB downloaded: " << downdata[i] << "\t|\tMB uploaded" << updata[i] << std::endl;
+			for (int i = 0;i < cudata.size();i++) {
+				std::cout << "# Customers Data Base:" << std::endl;
+				std::cout << "Customers ID: " << msisdn[i] << " (" << opBrandName[i] << ")" << std::endl;
+				std::cout << "* Services within the mobile operator *" << std::endl;
+				std::cout << "Incoming voice call durations: " << inccall << std::endl;
+				std::cout << "Outgoing voice call durations: " << outcall << std::endl;
+				std::cout << "Incoming SMS messages: " << incsms << std::endl;
+				std::cout << "Outgoing SMS messages: " << outsms << std::endl;
+				std::cout << "* Services outside the mobile operator *" << std::endl;
+				std::cout << "Incoming voice call durations: " << inccall << std::endl;
+				std::cout << "Outgoing call durations: " << outcall << std::endl;
+				std::cout << "Incoming SMS messages: " << incsms << std::endl;
+				std::cout << "Outgoing SMS messages: " << outsms << std::endl;
+				std::cout << "* Internet use *" << std::endl;
+				std::cout << "MB downloaded: " << downdata << "\t|\tMB uploaded" << updata << std::endl;
+			}
 		}
 	};
 	//	Record(int msisdn,std::string opname,int opno,std::string ctype,int moc,int mtc,int smsmo,int smsmt,int gprs):
