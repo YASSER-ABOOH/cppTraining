@@ -184,11 +184,11 @@ public:
 		{
 			std::cout << "#Operator Data Base:" << std::endl;
 			std::cout << "Operator Brand: " << opBrandName[i] << " (" << opNo[i] << ")" << std::endl;
-			std::cout << "Incoming voice call durations: " << inccall << std::endl;
-			std::cout << "Outgoing voice call durations: " << outcall << std::endl;
-			std::cout << "Incoming SMS messages: " << incsms << std::endl;
-			std::cout << "Outgoing SMS messages: " << outsms << std::endl;
-			std::cout << "MB downloaded: " << downdata << "\t|\tMB uploaded: " << updata << std::endl;
+			std::cout << "Incoming voice call durations: " << inccall[i] << std::endl;
+			std::cout << "Outgoing voice call durations: " << outcall[i] << std::endl;
+			std::cout << "Incoming SMS messages: " << incsms[i] << std::endl;
+			std::cout << "Outgoing SMS messages: " << outsms[i] << std::endl;
+			std::cout << "MB downloaded: " << downdata[i] << "\t|\tMB uploaded: " << updata[i] << std::endl;
 		}
 	}
 	};
@@ -292,14 +292,14 @@ public:
 				std::cout << "# Customers Data Base:" << std::endl;
 				std::cout << "Customers ID: " << msisdn[i] << " (" << opBrandName[i] << ")" << std::endl;
 				std::cout << "* Services within the mobile operator *" << std::endl;
-				std::cout << "Incoming voice call durations: " << inccall << std::endl;
-				std::cout << "Outgoing voice call durations: " << outcall << std::endl;
-				std::cout << "Incoming SMS messages: " << incsms << std::endl;
-				std::cout << "Outgoing SMS messages: " << outsms << std::endl;
+				std::cout << "Incoming voice call durations: " << inccall[i] << std::endl;
+				std::cout << "Outgoing voice call durations: " << outcall[i] << std::endl;
+				std::cout << "Incoming SMS messages: " << incsms[i] << std::endl;
+				std::cout << "Outgoing SMS messages: " << outsms[i] << std::endl;
 				std::cout << "* Services outside the mobile operator *" << std::endl;
-				std::cout << "Incoming voice call durations: " << inccall << std::endl;
-				std::cout << "Outgoing call durations: " << outcall << std::endl;
-				std::cout << "Incoming SMS messages: " << incsms << std::endl;
+				std::cout << "Incoming voice call durations: " << inccall[i] << std::endl;
+				std::cout << "Outgoing call durations: " << outcall[i] << std::endl;
+				std::cout << "Incoming SMS messages: " << incsms[i] << std::endl;
 				std::cout << "Outgoing SMS messages: " << outsms << std::endl;
 				std::cout << "* Internet use *" << std::endl;
 				std::cout << "MB downloaded: " << downdata << "\t|\tMB uploaded" << updata << std::endl;
