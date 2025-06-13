@@ -24,5 +24,8 @@
     <ClCompile Include="HMS.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="auction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
